@@ -1,4 +1,5 @@
 from sklearn.base import BaseEstimator
+from numpy import ndarray
 
 
 class BaseModel(BaseEstimator):
@@ -6,16 +7,19 @@ class BaseModel(BaseEstimator):
         pass
 
     def set_params(self, **params):
-        pass
+        for param, value in params:
+            setattr(self, param, value)
 
-    def get_params(self, deep=True):
-        pass
+    def get_params(self, deep: bool = True):
+        return {}
 
     def clone(self):
-        pass
+        instance = self.__class__()
+        instance.set_params(**self.get_params())
+        return instance
 
     def fit(self, x, y=None):
         pass
 
-    def predict(self, x):
+    def predict(self, x: ndarray) -> ndarray:
         pass

@@ -54,3 +54,10 @@ def test_clone_only_has_original_params():
     for param, value in cloneParams.items():
         assert param in modelParams
         assert modelParams[param] == value
+
+
+def test_clone_is_not_reference():
+    model = BaseModel()
+    model.set_params(**EXPECTED_PARAMS)
+    clonedModel = model.clone()
+    assert clonedModel is not model

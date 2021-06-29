@@ -1,0 +1,3 @@
+[submodule "SavageML"]
+	path = SavageML
+	url = https://github.com/savagewil/SavageML.git

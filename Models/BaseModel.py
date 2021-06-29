@@ -3,15 +3,9 @@ from numpy import ndarray
 
 
 class BaseModel(BaseEstimator):
-    def __init__(self):
+    def __init__(self, test_param=True):
+        self.test_param = test_param
         pass
-
-    def set_params(self, **params):
-        for param, value in params:
-            setattr(self, param, value)
-
-    def get_params(self, deep: bool = True):
-        return {}
 
     def clone(self):
         instance = self.__class__()

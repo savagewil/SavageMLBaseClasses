@@ -1,8 +1,8 @@
 import random
 import time
 
-from Models.BaseModel import BaseModel
-from Simulations.SimulationState import SimulationState
+from Models_tmp.BaseModel import BaseModel
+from Simulations_tmp.SimulationState import SimulationState
 
 
 def get_default_seed():

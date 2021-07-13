@@ -1,7 +1,7 @@
-import Simulations_tmp
-from Models_tmp.BaseModel import BaseModel
-from Simulations_tmp.BaseSimulation import BaseSimulation
-from Simulations_tmp.SimulationState import SimulationState
+import simulations
+from models.BaseModel_temp import BaseModel
+from simulations.BaseSimulation_temp import BaseSimulation
+from simulations.SimulationState_temp import SimulationState
 
 
 def test_initial_state_initialized():

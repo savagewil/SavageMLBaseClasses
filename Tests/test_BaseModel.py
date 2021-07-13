@@ -1,6 +1,6 @@
 import pytest
 
-from Models_tmp.BaseModel import BaseModel
+from models.BaseModel_temp import BaseModel
 
 EXPECTED_PARAMS = {"test_param": False}
 

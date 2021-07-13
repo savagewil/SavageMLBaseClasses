@@ -21,7 +21,11 @@ class BaseSimulation:
         return self.__class__(self.model, self.seed)
 
     def __next__(self):
-        return ()
+        if self.state == SimulationState.COMPLETE:
+            raise StopIteration
+        else:
+            result = self.step()
+            return result
 
     def set_seed(self, seed=get_default_seed()):
         self.seed = seed
@@ -39,8 +43,9 @@ class BaseSimulation:
     def get_state(self):
         return self.state
 
-    def step(self, visualize=False):
+    def step(self, visualize=False) -> tuple:
         self.state = SimulationState.COMPLETE
+        return ()
 
     def run(self, visualize=False):
         while not self.get_state() == SimulationState.COMPLETE:
